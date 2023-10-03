@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>  
+    <link rel = "stylesheet" href = '{% static "images/css/hello.css" %}'>
+
+<title>Musician List</title>
+</head>
+<body>  
+
+    <h1> {{ text_1 }} </h1>
+
+    <a href = "/form/">Add New</a>
+
+    <table border = "1">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Instruments</th>
+        </tr>
+
+        {% for row in musician %}
+
+    <tr>
+        <td> {{row.first_name}} </td>
+        <td> {{row.last_name}} </td>
+        <td> {{row.instruments}} </td>
+
+    </tr>
+         {% endfor %}
+    
+    </table>
+
+</body>
+</html>
